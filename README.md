@@ -13,7 +13,7 @@ Conjunto de atividades que compõem o ``Projeto Integrador II`` da 1ª turma do 
 * Eclipse IDE;
 * Plataforma Java SE.
 
-** Professores Orientadores**
+**Professores Orientadores**
 --------------------------------------------------------------------------
 Professor Mestre Eng. [Gerson da Penha Neto](https://github.com/paysandu)<br>
 Professor Especialista Claúdio Etelvino de Lima
@@ -29,4 +29,4 @@ Professor Especialista Claúdio Etelvino de Lima
 * [Lucas Rafael Andrade Barroso](https://github.com/lucasrafael5054)
 
 
-
+Projeto Reestruturado [Projeto Original](https://github.com/JenniferDominique/POO-Programacao_Orientada_a_Objetos)
