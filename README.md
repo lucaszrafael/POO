@@ -1,5 +1,7 @@
 # Atividade prática - Programação Orientada à Objetos
 
+| **Projeto Reestruturado**<br>  [Acessar Projeto Original](https://github.com/JenniferDominique/POO-Programacao_Orientada_a_Objetos)
+
 Conjunto de atividades que compõem o ``Projeto Integrador II`` da 1ª turma do 3º Semestre de 2020 da **FATEC São José dos Campos**, com o intuito de incentivar os alunos a colocar em prática o que é ensinado em sala de aula vinculando com situações do mundo real.
 
 **Projetos propostos com link da resolução**
@@ -28,5 +30,3 @@ Professor Especialista Claúdio Etelvino de Lima
 
 * [Lucas Rafael Andrade Barroso](https://github.com/lucasrafael5054)
 
-
-Projeto Reestruturado [Projeto Original](https://github.com/JenniferDominique/POO-Programacao_Orientada_a_Objetos)
