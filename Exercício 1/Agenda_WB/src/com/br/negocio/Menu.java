@@ -15,6 +15,7 @@ public class Menu {
 		System.out.println("[3] Editar Cliente\n");
 		System.out.println("[4] Listar Clientes");
 		System.out.println("[5] Relatórios\n");
+		System.out.println("[6] Guardar Informações em Arquivos CSV ");
 		System.out.println("[0] SAIR");
 		System.out.println("------------------------------------\n");
 
@@ -77,6 +78,17 @@ public class Menu {
 		System.out.println("[6] Produtos e Serviços mais vendidos no público Feminino");
 		System.out.println("[7] Produtos e Serviços mais vendidos no público Masculino");
 		System.out.println("[8] Produtos e Serviços mais vendidos no público Não Binário\n");
+		System.out.println("[0] VOLTAR");
+		
+		System.out.println("\nInforme sua opção: ");
+		
+		return leitor.getValor();
+	}
+	
+	public int menuCSV() {
+		System.out.println("----------------EXPORTAR ARQUIVOS----------------\n");
+		System.out.println("[1] Exportar Informações de Clientes");
+		System.out.println("[2] Exportar Informações de Produtos\n");
 		System.out.println("[0] VOLTAR");
 		
 		System.out.println("\nInforme sua opção: ");

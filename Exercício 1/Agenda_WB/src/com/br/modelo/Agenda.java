@@ -1,5 +1,8 @@
 package com.br.modelo;
 
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.Year;
 import java.util.ArrayList;
@@ -160,7 +163,7 @@ public class Agenda{
 		String opcao;
 		
 		for(Pessoa p: clientes) {
-			if(p.getNome().equals(nome) && p.getIdade() == idade && p.getGenero().equals(genero)) {
+			if(p.getNome().toUpperCase().equals(nome) && p.getIdade() == idade && p.getGenero().equals(genero)) {
 				System.out.println("Foi encontrado no sistema o usuario: ");
 				p.imprimirDetalhado();
 				do {
@@ -250,7 +253,7 @@ public class Agenda{
 		int anoAtual = LocalDate.now().getYear();	// Armazenando ano atual do sistema
 		
 		for(Pessoa p: clientes) {
-			if(p.getNome().equals(nome) && p.getIdade() == idade && p.getGenero().equals(genero)) {
+			if(p.getNome().toUpperCase().equals(nome) && p.getIdade() == idade && p.getGenero().equals(genero)) {
 				System.out.println("Foi encontrado no sistema o usuario: ");
 				p.imprimirDetalhado();
 				do {
@@ -893,5 +896,82 @@ public class Agenda{
 		}
 	}
 
+	public void gerarCSV(){
+		int opcao_menu;
+		
+		opcao_menu = menu.menuCSV();
+		
+		switch(opcao_menu) {
+		case 0: return;
+		case 1:
+			csvClientes();
+			break;
+		case 2:
+			csvProdutos();
+			break;
+		}
+	}
+	
+	public void csvClientes() {
+		int anoAtual = LocalDate.now().getYear();	// Armazenando ano atual do sistema
+		int mesAtual = LocalDate.now().getMonthValue();	// Armazenando mes atual do sistema
+		int diaAtual = LocalDate.now().getDayOfMonth();	// Armazenando dia atual do sistema
+		
+		try
+	    {
+	        FileWriter writer = new FileWriter("c:\\WB_RELATORIO_CLIENTES"+ diaAtual +"-"+ mesAtual +"-"+anoAtual+".csv");
+
+	        writer.append("CLIENTE" + "," + "IDADE" + "," + "GENERO" + "," + "DATA DE NASCIMENTO" + "," + "TELEFONE");
+	        
+	        for(Cliente p: clientes) {
+	        	
+	        	writer.append(p.getNome() + "," + p.getIdade() + ","
+	        			+ p.getGenero() + "," 
+	        			+ p.getDataNascimento() + "," 
+	        			+"("+ p.getTel().getDdd()+ ") " 
+	        			+ p.getTel().getNumero());
+
+	        }
+	        writer.flush();
+	        writer.close();
+	        
+	        System.out.println("ARQUIVO EXPORTADO COM SUCESSO PARA A PASTA C:\\");
+	    }
+	    catch(IOException e)
+	    {
+	         e.printStackTrace();
+	    } 
+		
+	}
+	
+	public void csvProdutos() {
+		int anoAtual = LocalDate.now().getYear();	// Armazenando ano atual do sistema
+		int mesAtual = LocalDate.now().getMonthValue();	// Armazenando mes atual do sistema
+		int diaAtual = LocalDate.now().getDayOfMonth();	// Armazenando dia atual do sistema
+		
+		try
+	    {
+			FileWriter writer = new FileWriter("c:\\WB_RELATORIO_PRODUTOS"+ diaAtual +"-"+ mesAtual +"-"+anoAtual+".csv");
+
+	        writer.append("CLIENTE" + "," + "IDADE" + "," + "GENERO" + "," + "PRODUTOS E SERVIÇOS");
+	        
+	        for(Cliente p: clientes) {
+	        	
+	        	writer.append(p.getNome() + "," + p.getIdade() + ","
+	        			+ p.getGenero() + "," 
+	        			+ p.getDataNascimento() + "," 
+	        			+ p.getProduto_e_Servico());
+
+	        }
+	        writer.flush();
+	        writer.close();
+	        
+	        System.out.println("ARQUIVO EXPORTADO COM SUCESSO PARA A PASTA C:\\");
+	    }
+	    catch(IOException e)
+	    {
+	         e.printStackTrace();
+	    } 
+	}
 	
 }
